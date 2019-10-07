@@ -13,12 +13,12 @@
             - Computed properties are also very powerful when dealing with aggregate data (an array of records)
         [x]: User can click a row to edit the item details
         [x]: Option to sort by customer budget (descending)
-        [ ]: Searchbar using client-side filtering to match names, company, and project
+        [x]: Searchbar using client-side filtering to match names, company, and project
     ## Customer Detail View ##
-        [ ]: All fields are required upon submit
-        [ ]: Email and budget must be valid formats
+        [x]: All fields are required upon submit
+        [x]: Email and budget must be valid formats
             - Consider using HTML5 attributes and features
-        [ ]: Upon clicking save, user is brought back to list view and records reflect the updates
+        [x]: Upon clicking save, user is brought back to list view and records reflect the updates
     ## Dashboard ##
         [ ]: Add a new dashboard menu item with new view, with the following features:
             [ ]: Total count of customers
