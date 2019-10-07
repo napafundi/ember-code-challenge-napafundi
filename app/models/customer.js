@@ -1,5 +1,6 @@
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
+import { computed } from '@ember/object';
 
 export default Model.extend({
     firstName: attr('string'),
@@ -8,5 +9,9 @@ export default Model.extend({
     phoneNumber: attr('string'),
     company: attr('string'),
     project: attr('string'),
-    budget: attr('number')
+    budget: attr('number'),
+
+    fullName: computed('firstName', 'lastName', function() {
+        return `${this.get('firstName')} ${this.get('lastName')}`;
+    })
 });

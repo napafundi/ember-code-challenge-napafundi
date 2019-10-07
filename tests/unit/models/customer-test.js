@@ -4,10 +4,10 @@ import { setupTest } from 'ember-qunit';
 module('Unit | Model | customer', function(hooks) {
   setupTest(hooks);
 
-  // Replace this with your real tests.
-  test('it exists', function(assert) {
-    let store = this.owner.lookup('service:store');
-    let model = store.createRecord('customer', {});
-    assert.ok(model);
+  test('should correctly concat first name and last name', async function(assert) {
+    const customer = this.owner.lookup('service:store').createRecord('customer');
+    customer.set('firstName', 'test-first');
+    customer.set('lastName', 'test-last');
+    assert.equal(customer.get('fullName'), 'test-first test-last');
   });
 });
