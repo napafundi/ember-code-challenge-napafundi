@@ -12,13 +12,19 @@
         <option value="fullName:desc">
           Sort by name (desc.)
         </option> 
+        <option value="budget">
+          Sort by budget
+        </option>
         <option value="budget:desc">
           Sort by budget (desc.)
         </option>
       </select>
     </div>
+    <div>
+      {{input class="form-control" type="text" value=search placeholder="search.."}}
+    </div>
   </div>
   <div class="card">
-    <CustomersTable @model={{this.sortedCustomers}} />
+    <CustomersTable @model={{this.filteredCustomers}} />
   </div>
 </Page::Content>
