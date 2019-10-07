@@ -4,9 +4,6 @@ import { sort} from '@ember/object/computed';
 
 export default Controller.extend({
   sortProperty: 'fullName',
-  sortPropertyDesc: 'fullName:desc',
-  sortPropertyBudgetDesc: 'budget:desc',
-  sortPropertyBudget: 'budget',
 
   customersSortProps: computed('sortProperty', function() {
     return [this.sortProperty];
@@ -26,5 +23,5 @@ export default Controller.extend({
                item.get('project').toLowerCase().indexOf(search) !== -1;
       })
     }
-  }).observes('searchTerm'),
+  }),
 });
