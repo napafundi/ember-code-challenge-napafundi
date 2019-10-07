@@ -24,7 +24,7 @@ module.exports = function(environment) {
 
     // IMPORTANT!!!
     // Replace {your-name-here} with your full name, dash separated, e.g. "john-smith"
-    API_BASE_URL: 'https://xadsfmudcl.execute-api.us-east-1.amazonaws.com/prod/{your-name-here}'
+    API_BASE_URL: 'https://xadsfmudcl.execute-api.us-east-1.amazonaws.com/prod/nicola-pafundi'
   };
 
   if (environment === 'development') {

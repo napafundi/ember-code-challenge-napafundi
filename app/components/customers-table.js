@@ -14,37 +14,51 @@ export default Component.extend({
       {
         label: 'First Name',
         valuePath: 'firstName',
-        sortable: false
+        sortable: false,
+        classNames: ['first-name-col']
       },
       {
         label: 'Last Name',
         valuePath: 'lastName',
-        sortable: false
+        sortable: false,
+        classNames: ['last-name-col']
       },
       {
         label: 'Email',
         valuePath: 'emailAddress',
-        width: '250px',
+        width: '200px',
         sortable: false,
+        classNames: ['email-col'],
+        breakpoints: ['tablet', 'desktop', 'jumbo']
+      },
+      {
+        label: 'Phone Number',
+        valuePath: 'phoneNumber',
+        width: '150px',
+        sortable: false,
+        classNames: ['phone-col'],
         breakpoints: ['tablet', 'desktop', 'jumbo']
       },
       {
         label: 'Company',
         valuePath: 'company',
         sortable: false,
-        breakpoints: ['desktop', 'jumbo']
+        classNames: ['company-col'],
+        breakpoints: ['tablet', 'desktop', 'jumbo']
       },
       {
         label: 'Project',
         valuePath: 'project',
         sortable: false,
-        breakpoints: ['desktop', 'jumbo']
+        classNames: ['project-col'],
+        breakpoints: ['tablet', 'desktop', 'jumbo']
       },
       {
         label: 'Budget',
         valuePath: 'budget',
         sortable: false,
-        breakpoints: ['jumbo']
+        classNames: ['budget-col'],
+        breakpoints: ['tablet', 'desktop', 'jumbo']
       }
     ]
   }),

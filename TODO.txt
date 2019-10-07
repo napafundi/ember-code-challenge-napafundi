@@ -1,15 +1,16 @@
 [ ]: Verify that the views provided meet the following specifications
     ## Customer List View ##
-        [ ]: Shows the following:
-            [ ]: First Name
-            [ ]: Last Name
-            [ ]: Email
-            [ ]: Phone Number
-            [ ]: Company
-            [ ]: Project
-            [ ]: Budget
+        [x]: Shows the following:
+            [x]: First Name
+            [x]: Last Name
+            [x]: Email
+            [x]: Phone Number
+            [x]: Company
+            [x]: Project
+            [x]: Budget
         [ ]: Views are sorted by customer's full name (ascending) by default
             - Ember's computed properties are good for dealing with derived values
+            - Computed properties are also very powerful when dealing with aggregate data (an array of records)
         [ ]: User can click a row to edit the item details
         [ ]: Option to sort by customer budget (descending)
         [ ]: Searchbar using client-side filtering to match names, company, and project
