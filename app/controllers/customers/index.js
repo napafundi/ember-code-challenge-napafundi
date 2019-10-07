@@ -5,6 +5,7 @@ import { sort } from '@ember/object/computed';
 export default Controller.extend({
   sortProperty: 'fullName',
   sortPropertyDesc: 'fullName:desc',
+  sortPropertyBudgetDesc: 'budget:desc',
 
   customersSortProps: computed('sortProperty', function() {
     return [this.sortProperty];

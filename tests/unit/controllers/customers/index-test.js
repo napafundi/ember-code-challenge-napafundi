@@ -13,7 +13,7 @@ module('Unit | Controller | customers/index', function(hooks) {
       phoneNumber: '(555) 555-5555',
       company: 'test inc.',
       project: 'test project',
-      budget: 500,
+      budget: 6000,
     },{
       firstName: 'bilbo',
       lastName: 'baggons',
@@ -31,7 +31,7 @@ module('Unit | Controller | customers/index', function(hooks) {
       phoneNumber: '(555) 555-5555',
       company: 'test inc.',
       project: 'test project',
-      budget: 500,
+      budget: 2400,
     },{
       firstName: 'gimli',
       lastName: 'son of gloin',
@@ -40,7 +40,7 @@ module('Unit | Controller | customers/index', function(hooks) {
       phoneNumber: '(555) 555-5555',
       company: 'test inc.',
       project: 'test project',
-      budget: 500,
+      budget: 3200,
     }
   ]);
   });
@@ -61,5 +61,14 @@ module('Unit | Controller | customers/index', function(hooks) {
     var sortedCustomers = controller.sortedCustomers;
     assert.equal(sortedCustomers[0].fullName, 'gimli son of gloin');
     assert.equal(sortedCustomers[3].fullName, 'aragorn telcontar');
+  });
+
+  test('sorts by budget descending', function(assert) {
+    let controller = this.owner.lookup('controller:customers/index');
+    controller.set('model', this.get('model'));
+    controller.set('sortProperty', 'budget:desc');
+    var sortedCustomers = controller.sortedCustomers;
+    assert.equal(sortedCustomers[0].fullName, 'frodo baggons');
+    assert.equal(sortedCustomers[3].fullName, 'bilbo baggons');
   });
 });
