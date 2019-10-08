@@ -14,4 +14,17 @@ export default Model.extend({
     fullName: computed('firstName', 'lastName', function() {
         return `${this.get('firstName')} ${this.get('lastName')}`;
     }),
+
+    budgetFormatted: computed('budget', function() {
+        let budget = this.get('budget');
+        return budget.toLocaleString('en-US',
+            {
+                style: 'currency',
+                currency:'USD',
+                maximumFractionDigits: 0,
+                minimumFractionDigits: 0
+            }
+        );
+        
+    })
 });

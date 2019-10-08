@@ -34,7 +34,7 @@ export default Component.extend({
             },
             {
                 label: 'Budget',
-                valuePath: 'budget',
+                valuePath: 'budgetFormatted',
                 sortable: false,
             }
         ]

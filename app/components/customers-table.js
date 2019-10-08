@@ -55,7 +55,7 @@ export default Component.extend({
       },
       {
         label: 'Budget',
-        valuePath: 'budget',
+        valuePath: 'budgetFormatted',
         sortable: false,
         classNames: ['budget-col'],
         breakpoints: ['tablet', 'desktop', 'jumbo']
