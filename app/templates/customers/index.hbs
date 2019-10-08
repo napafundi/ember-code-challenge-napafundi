@@ -2,7 +2,7 @@
 <Page::Content>
   <div class="d-flex justify-content-between align-content-center mb-3 form-inline">
     <h5 class="card-title">
-      {{this.sortedCustomers.length}} Results
+      {{this.filteredCustomers.length}} Results
     </h5>
     <div>
       <select class="form-control" onchange={{action (mut this.sortProperty) value="target.value"}}>
@@ -19,9 +19,7 @@
           Sort by budget (desc.)
         </option>
       </select>
-    </div>
-    <div>
-      {{input class="form-control" type="text" value=search placeholder="search..."}}
+      {{input class="form-control" type="text" value=search placeholder="Search..."}}
     </div>
   </div>
   <div class="card">

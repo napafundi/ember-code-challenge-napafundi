@@ -29,7 +29,7 @@ module('Unit | Controller | customers/index', function(hooks) {
       fullName: 'aragorn telcontar',
       emailAddress: 'test@email.com',
       phoneNumber: '(555) 555-5555',
-      company: 'test inc.',
+      company: 'aragorn inc.',
       project: 'test project',
       budget: 2400,
     },{
@@ -39,7 +39,7 @@ module('Unit | Controller | customers/index', function(hooks) {
       emailAddress: 'test@email.com',
       phoneNumber: '(555) 555-5555',
       company: 'test inc.',
-      project: 'test project',
+      project: 'gimli fun stuff',
       budget: 3200,
     }
   ]);
@@ -63,6 +63,15 @@ module('Unit | Controller | customers/index', function(hooks) {
     assert.equal(sortedCustomers[3].fullName, 'aragorn telcontar');
   });
 
+  test('sorts by budget ascending', function(assert) {
+    let controller = this.owner.lookup('controller:customers/index');
+    controller.set('model', this.get('model'));
+    controller.set('sortProperty', 'budget');
+    var sortedCustomers = controller.sortedCustomers;
+    assert.equal(sortedCustomers[0].fullName, 'bilbo baggons');
+    assert.equal(sortedCustomers[3].fullName, 'frodo baggons');
+  });
+
   test('sorts by budget descending', function(assert) {
     let controller = this.owner.lookup('controller:customers/index');
     controller.set('model', this.get('model'));
@@ -70,5 +79,42 @@ module('Unit | Controller | customers/index', function(hooks) {
     var sortedCustomers = controller.sortedCustomers;
     assert.equal(sortedCustomers[0].fullName, 'frodo baggons');
     assert.equal(sortedCustomers[3].fullName, 'bilbo baggons');
+  });
+
+  test('filter works for first name', function(assert) {
+    let controller = this.owner.lookup('controller:customers/index');
+    controller.set('model', this.get('model'));
+    controller.set('search', 'bilbo');
+    var filteredCustomers = controller.get('filteredCustomers');
+    assert.equal(filteredCustomers.length, 1);
+    assert.equal(filteredCustomers[0].firstName, 'bilbo');
+  });
+
+  test('filter works for last name', function(assert) {
+    let controller = this.owner.lookup('controller:customers/index');
+    controller.set('model', this.get('model'));
+    controller.set('search', 'baggons');
+    var filteredCustomers = controller.get('filteredCustomers');
+    assert.equal(filteredCustomers.length, 2);
+    assert.equal(filteredCustomers[0].firstName, 'bilbo');
+    assert.equal(filteredCustomers[1].firstName, 'frodo');
+  });
+
+  test('filter works for company', function(assert) {
+    let controller = this.owner.lookup('controller:customers/index');
+    controller.set('model', this.get('model'));
+    controller.set('search', 'aragorn inc.');
+    var filteredCustomers = controller.get('filteredCustomers');
+    assert.equal(filteredCustomers.length, 1);
+    assert.equal(filteredCustomers[0].firstName, 'aragorn');
+  });
+
+  test('filter works for project', function(assert) {
+    let controller = this.owner.lookup('controller:customers/index');
+    controller.set('model', this.get('model'));
+    controller.set('search', 'gimli fun stuff');
+    var filteredCustomers = controller.get('filteredCustomers');
+    assert.equal(filteredCustomers.length, 1);
+    assert.equal(filteredCustomers[0].firstName, 'gimli');
   });
 });

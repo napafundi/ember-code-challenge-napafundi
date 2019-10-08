@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
-import { sort} from '@ember/object/computed';
+import { sort } from '@ember/object/computed';
 
 export default Controller.extend({
   sortProperty: 'fullName',
@@ -18,10 +18,10 @@ export default Controller.extend({
       return this.sortedCustomers;
     } else {
       return this.sortedCustomers.filter(function(item) {
-        return item.get('fullName').toLowerCase().indexOf(search) !== -1 ||
-               item.get('company').toLowerCase().indexOf(search) !== -1 ||
-               item.get('project').toLowerCase().indexOf(search) !== -1;
-      })
+        return item.fullName.toLowerCase().indexOf(search) !== -1 ||
+               item.company.toLowerCase().indexOf(search) !== -1 ||
+               item.project.toLowerCase().indexOf(search) !== -1;
+      });
     }
   }),
 });
