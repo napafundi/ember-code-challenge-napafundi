@@ -1,6 +1,13 @@
 <Page::Header @title="Dashboard"></Page::Header>
   <Page::Content>
     <div class="d-flex justify-content-between align-content center mb-3">
-      <GlanceView @model={{this.model}}></GlanceView>
+      <div class="row w-100">
+        <div class="col-5">
+          <GlanceView @model={{this.model}}></GlanceView>
+        </div>
+        <div class="col-7">
+          <TopProspects @model={{this.model}}></TopProspects>
+        </div>
+      </div>
     </div>
   </Page::Content>
