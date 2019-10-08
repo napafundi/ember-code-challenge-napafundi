@@ -20,8 +20,8 @@
             - Consider using HTML5 attributes and features
         [x]: Upon clicking save, user is brought back to list view and records reflect the updates
     ## Dashboard ##
-        [ ]: Add a new dashboard menu item with new view, with the following features:
-            [ ]: Total count of customers
-            [ ]: Total sum of customer budget
-            [ ]: List of top 5 prospects (sorted by highest budget descending)
-            [ ]: BONUS - Additional information that could be useful for a summary view
+        [x]: Add a new dashboard menu item with new view, with the following features:
+            [x]: Total count of customers
+            [x]: Total sum of customer budget
+            [x]: List of top 5 prospects (sorted by highest budget descending)
+            [x]: BONUS - Additional information that could be useful for a summary view

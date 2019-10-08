@@ -40,6 +40,7 @@ export default Component.extend({
         ]
     }),
 
+    // eslint-disable-next-line ember/no-observers
     onModelChange: observer('model', function() {
         this.table.setRowsSynced(this.model);
     }),

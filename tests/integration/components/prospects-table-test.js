@@ -6,21 +6,20 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Component | prospects-table', function(hooks) {
   setupRenderingTest(hooks);
 
+  hooks.beforeEach(function() {
+    this.set('model', [{
+      firstName: 'test-first',
+      lastName: 'test-last',
+      emailAddress: 'test@email.com',
+      phoneNumber: '(555) 555-5555',
+      company: 'test inc.',
+      project: 'test project',
+      budget: 500,
+    }]);
+  });
+
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
-    await render(hbs`<ProspectsTable />`);
-
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <ProspectsTable>
-        template block text
-      </ProspectsTable>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    await render(hbs`<ProspectsTable @model={{this.model}} />`);
+    assert.ok(this.element.textContent);
   });
 });

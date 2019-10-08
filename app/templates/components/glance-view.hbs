@@ -4,14 +4,28 @@
     <div class="row">
       <div class="col-6">
         <h5 class="card-subtitle text-muted text-center">{{this.model.length}}</h5>
-        <div class="card-text">
-          <span>Customers in pipeline</span>
+        <div class="card-text text-center">
+          <span class="text-nowrap">Customers in pipeline</span>
         </div>
       </div>
       <div class="col-6">
         <h5  class="card-subtitle text-muted text-center">${{this.totalBudget}}M</h5>
-        <div class="card-text">
+        <div class="card-text text-center">
           <span class="text-nowrap">Total forecasted budget</span>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-6">
+        <h5 class="card-subtitle text-muted text-center">{{this.employedCustomersCount}}</h5>
+        <div class="card-text text-center">
+          <span class="text-nowrap">Employed customers</span>
+        </div>
+      </div>
+      <div class="col-6">
+        <h5 class="card-subtitle text-muted text-center">${{this.averageBudget}}M</h5>
+        <div class="card-text text-center">
+          <span class="text-nowrap">Average budget</span>
         </div>
       </div>
     </div>
