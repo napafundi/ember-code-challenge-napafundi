@@ -117,4 +117,11 @@ module('Unit | Controller | customers/index', function(hooks) {
     assert.equal(filteredCustomers.length, 1);
     assert.equal(filteredCustomers[0].firstName, 'gimli');
   });
+
+  test('customerSortProps returns correct property', function(assert) {
+    let controller = this.owner.lookup('controller:customers/index');
+    assert.equal(controller.get('customersSortProps'), 'fullName');
+    controller.set('sortProperty', 'fullName:desc');
+    assert.equal(controller.get('customersSortProps'), 'fullName:desc');
+  });
 });
